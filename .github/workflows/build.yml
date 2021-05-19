@@ -5,10 +5,10 @@ on:
 
 jobs:
   test1:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      # - run: sudo apt remove libgcc-11-dev gcc-11
+      - run: sudo apt remove libgcc-11-dev gcc-11
       - name: Build
         run: |
           sudo apt-get update
@@ -16,9 +16,10 @@ jobs:
           clang++-3.9 -g -O0 -Wall -std=gnu++11 test.cpp -o test -pthread
           ./test
   test2:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
+      - run: sudo apt remove libgcc-11-dev gcc-11
       - name: Build
         run: |
           sudo apt-get update
