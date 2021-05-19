@@ -24,5 +24,5 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends clang-9
-          clang++-9 -g -O0 -Wall -std=gnu++11 test.cpp -o test -pthread
+          clang++-9 -g -O0 -Wall -std=gnu++11 -stdlib=libc++ test.cpp -o test -pthread
           ./test
