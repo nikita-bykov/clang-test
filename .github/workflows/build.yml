@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      # - run: sudo apt remove libgcc-11-dev gcc-11
+      - run: sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 50
       - name: Build
         run: |
           sudo apt-get update
@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      # - run: sudo apt remove libgcc-11-dev gcc-11
+      - run: sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 50
       - name: Build
         run: |
           sudo apt-get update
