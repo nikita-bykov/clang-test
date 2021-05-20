@@ -11,6 +11,7 @@ jobs:
       - run: |
           sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 1
           sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 20
+          gcc --version
       - name: Build
         run: |
           sudo apt-get update
