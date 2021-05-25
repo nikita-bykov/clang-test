@@ -9,7 +9,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 1
+          sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 40
+          sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 10
+          sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 20
+          sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 30
           gcc --version
       - name: Build
         run: |
@@ -22,8 +25,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 1
-          sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 50
+          sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 40
+          sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 10
+          sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 20
+          sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 30
       - name: Build
         run: |
           sudo apt-get update
